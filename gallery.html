@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="CSS/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery Page</title>
+</head>
+<body>
+    <header class="main-header">
+        <h1>DAILY BUGLE</h1>
+        <nav>
+            <div class="hamburger">☰</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="article.html">Article</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="gallery">
+            <div class="photo"><img src="Images/blackpantherfrance Medium.jpeg" alt="blackpantherfrance">
+                <h2>Political Intrigue</h2>
+                <p>Political drama within the superhero community or involving government agencies, such as S.H.I.E.L.D. or the Avengers, could have unfolded. This could involve scandals, power struggles, or revelations about hidden agendas.</p>
+            </div>
+            <div class="photo"><img src="Images/namor Medium.jpeg" alt="namor">
+                <h2>New Threat Emerges</h2>
+                <p>A new villain or threat could have emerged, posing a significant danger to Earth and its inhabitants. This could include the resurgence of a classic antagonist or the introduction of a completely new adversary.</p>
+            </div>
+            <div class="photo"><img src="Images/dnamutant Medium.jpeg" alt="dnamutant">
+                <h2>Mutant Rights Movement</h2>
+                <p>Significant developments in the ongoing struggle for mutant rights and equality, such as protests, legislation, or clashes between mutants and anti-mutant groups, could have dominated headlines.</p>
+            </div>
+            <div class="photo"><img src="Images/civilunrest.jpeg" alt="civilunrest">
+                <h2>Civil Unrest</h2>
+                <p>Civil unrest or riots in major cities due to socioeconomic issues, discrimination, or tensions between different communities could have escalated, leading to clashes with law enforcement and calls for action from superheroes.</p>
+            </div>
+            <!-- repeat for each photo -->
+        </div>
+    </main>
+    <div class="gallery-controls">
+        <button id="prev">Previous</button>
+        <button id="next">Next</button>
+    </div>
+    <script>
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+        const galleryItems = document.querySelectorAll('.photo');
+        const prevButton = document.getElementById('prev');
+        const nextButton = document.getElementById('next');
+        let currentIndex = 0;
+
+        // Function to show the gallery item at the specified index
+        function showItem(index) {
+            // Hide all gallery items
+            galleryItems.forEach(item => {
+                item.style.display = 'none';
+            });
+
+            // Display the gallery item at the specified index
+            galleryItems[index].style.display = 'block';
+        }
+
+        // Function to handle clicking on the "Previous" button
+        function showPreviousItem() {
+            currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+            showItem(currentIndex);
+        }
+
+        // Function to handle clicking on the "Next" button
+        function showNextItem() {
+            currentIndex = (currentIndex + 1) % galleryItems.length;
+            showItem(currentIndex);
+        }
+
+        // Add event listeners to the buttons
+        prevButton.addEventListener('click', showPreviousItem);
+        nextButton.addEventListener('click', showNextItem);
+
+        // Show the first gallery item initially
+        showItem(currentIndex);
+    </script>
+</body>
+</html>

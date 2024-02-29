@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="CSS/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newpaper Landing Page</title>
+</head>
+<body>
+    <header class="main-header">
+        <h1>DAILY BUGLE</h1>
+        <nav>
+            <div class="hamburger">☰</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="article.html">Article</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="featured-article">
+            <h2>Featured Article</h2>
+            <div class="container">
+                <img src="Images/threespidermen.jpg" alt="threespidermen">
+                <div class="overlay">
+                    <h3>More Spider-men than our local Spider-guy</h2>
+                    <h4>Citizens Scared For More Potential Threats Towards Their Daily Lives</h4>
+                </div>
+            </div>            
+        </section>
+        <section class="latest-news">
+            <h2>Latest News</h2>
+            <div class="container">
+                <img src="Images/wolverinevertical.jpg" alt="wolverinevertical">
+                <div class="overlay">
+                    <h5>He's Back From the Dead</h5>
+                    <h4>Infamous Wolverine Is Back From the Dead</h4>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+        document.querySelector('.hamburger') .addEventListener('click',function() {
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+    </script>
+    <footer>
+        <p>Contact us at dailybugle@newsoutlet.com</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,192 @@
+@font-face {
+    font-family: 'DM_Serif_Display-Italic';
+    src: url('Fonts/DM_Serif_Display/DMSerifDisplay-Italic.ttf') format('truetype');
+}
+.main-header {
+    display: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px;
+}
+.main-header ul {
+    list-style-type: none;
+    display: flex;
+    gap: 24px;
+    color: #000;
+}
+.main-header nav a {
+    text-decoration: none;
+    padding: 24px;
+}
+main {
+    display: grid;
+    grid-template-columns: 3fr 1fr; /* 3:1 ration between content */
+    gap: 16px;
+    padding: 24px;
+    background-color: #ffffff
+}
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    background-color: #DE5959;
+}
+.article-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 24px;
+}
+.article-content {
+    display: grid;
+    grid-template-columns: 1fr; /* single column layout */
+    gap: 16px;
+    padding: 24px;
+}
+h1 {
+    color: rgb(200, 190, 190);
+    background-color: brown;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 9);
+    -webkit-text-stroke: 2px;
+    -webkit-text-stroke-color: black;
+    font-size: 40px;
+    font-family: 'DM_Serif_Display-Italic';
+    font-weight: 900;
+    padding-left: 32px;
+    display: flex;
+}
+/* Featured Article */
+h2 {
+    color:black
+}
+h3 {
+    color: #ffffff;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 60px;
+}
+h5 {
+    color: #ffffff;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 32px;
+}
+h4 {
+    color: #ffffff;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 28px; 
+    font-weight: 300;
+}
+/*image overlays*/
+.container {
+    position: relative;
+    display: inline-block; /* Ensures the container wraps around the image */
+}
+
+.overlay {
+    margin-top: 48px;
+    position: absolute;
+    top: 35%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    text-align: left;
+    color: white; /* Color of the text */
+    padding: 15px;
+}
+
+.overlay h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.overlay p {
+    font-size: 18px;
+    margin: 0;
+}
+
+/* regular image */
+img {
+    height: auto;
+    max-width: 100%;
+}
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.advertisement {
+    padding: 16px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* creates a responsive grid */
+    gap: 24px; /* spaces between photos */
+    padding: 24px;
+}
+.photo img {
+    width: 100%; /*images are fully responsive within their containers */
+    height: auto; /*maintain aspect ratio */
+}
+.photo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    border: 1px solid #ccc;
+    text-align: left;
+    max-width: 100%;
+    height: auto;
+}
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px; /* Add spacing between items (adjust as needed) */
+}
+/* gallery controls */
+.gallery-controls {
+    margin-top: 20px;
+    display: flex;
+    gap: 16px;
+    padding: 24px;
+}
+
+button {
+    padding: 16px 24px;
+    border: none;
+    color: #ffffff;
+    background-color: rgb(141, 35, 35);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+button:hover {
+    background-color: rgb(81, 18, 18);
+}
+/* Hamburger Menu Style */
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.advertisement {
+    padding: 16px;
+    border: 1px solid #ccc;
+    text-align: center;
+    background-image: url('Images/goosethecat.jpeg');
+}
+
+/* Hide regular navigation items on smaller screens */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block; /*show hamburger menu */
+    }
+
+    nav ul {
+        flex-direction: column;
+        display: none; /*initially hide navigation items */
+    }
+
+    /* When clicking the hamburger menu, use JavaScript to toggle this class to display the items */
+    nav ul .active {
+        display: flex; /*display navigation items in a column */
+    }
+}
